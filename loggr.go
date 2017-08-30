@@ -4,21 +4,19 @@ package loggr
 import (
   "fmt"
   "time"
+  "io"
   )
 
 // Logger construct with logging level
 type Log struct {
   Verbose bool // Optionally print debug values
+  Writer io.Writer // Log destination
 }
 
 // Write function
 // TODO - testing - make this return a value?
 func (l Log) write (level string, s string){
-  fmt.Printf("%s - %s: %s\n", time.Now().UTC().Format(time.RFC3339), level, s)
-}
-
-func (l Log) test (s string) string {
-  return s
+  fmt.Fprintf(l.Writer, "%s - %s: %s\n", time.Now().UTC().Format(time.RFC3339), level, s)
 }
 
 // Handle Log.Info(msg) statements
