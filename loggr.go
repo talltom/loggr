@@ -17,6 +17,10 @@ func (l Log) write (level string, s string){
   fmt.Printf("%s - %s: %s\n", time.Now().UTC().Format(time.RFC3339), level, s)
 }
 
+func (l Log) test (s string) string {
+  return s
+}
+
 // Handle Log.Info(msg) statements
 func (l Log) Info(s string) {
   // Always write info strings
