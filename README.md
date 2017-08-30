@@ -4,10 +4,11 @@ Loggr.go
 A minimalist logger that writes to stdout
 
 ### Key features
-- verbosity controlled by different log states (e.g. "debug", "info", "error")
-- timestamps UTC printed as ISO 8601 string
+- optional verbose mode to print debug statements
+- timestamps in UTC printed as ISO 8601 string
 
 ### Install
+- go get github.com/talltom/loggr
 
 ### Use
 Example
@@ -26,6 +27,7 @@ log.Debug("Debug statement optional, requires verbose mode")
 
 Result
 ```sh
-> "Info statements always printed"
-> "Error statements always printed"
-> "Debug statement optional, requires verbose mode"
+2017-08-30T15:12:03Z - info: Info statement
+2017-08-30T15:12:03Z - error: Error statement
+2017-08-30T15:12:03Z - debug: Debug statement optional, requires verbose mode
+```
