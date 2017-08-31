@@ -16,7 +16,7 @@ A minimalist logger that writes sensible messages
 - go get github.com/talltom/loggr
 
 ### Use
-Example 1. Logging to Stdout
+**Example 1. Logging to Stdout**
 ```go
 import (
   "loggr"
@@ -43,7 +43,7 @@ Result
 2017-08-30T15:12:03Z - debug: Debug statement optional, requires verbose mode
 ```
 
-Example 2. Logging to File
+**Example 2. Logging to File**
 ```go
 import (
   "loggr"
@@ -71,3 +71,7 @@ func main(){
   }
   log.Info("Now writing to file")
 }
+```
+
+### License
+- GNU GPLv3
