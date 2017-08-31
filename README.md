@@ -66,10 +66,11 @@ func main(){
 
   // Logger
   var log = loggr.Log {
-  		Verbose: true,
+  		Verbose: false,
   		Writer: w,
   }
   log.Info("Now writing to file")
+  log.Debug("This will not be written as logger not in verbose mode")
 }
 ```
 
