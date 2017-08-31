@@ -3,6 +3,10 @@ Loggr.go
 
 A minimalist logger that writes sensible messages
 
+[![Build Status](https://travis-ci.org/talltom/loggr.svg?branch=master)](https://travis-ci.org/talltom/loggr)
+
+[![Coverage Status](https://coveralls.io/repos/github/talltom/loggr/badge.svg?branch=master)](https://coveralls.io/github/talltom/loggr?branch=master)
+
 ### Key features
 - optional verbose mode to print debug statements
 - timestamps in UTC printed as ISO 8601 string
