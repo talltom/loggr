@@ -1,3 +1,4 @@
+// Tests for loggr - a minimalist logger
 package loggr
 
 import "testing"
