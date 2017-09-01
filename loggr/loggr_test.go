@@ -1,9 +1,9 @@
 // Tests for loggr - a minimalist logger
 package loggr
 
-import "testing"
 import "bytes"
 import "strings"
+import "testing"
 
 // Test log.Info()
 func TestInfo(t *testing.T) {
@@ -80,7 +80,7 @@ func TestDebug(t *testing.T) {
 	}
 }
 
-//Test Log.Verbose = false (no debug)
+// Test Log.Verbose = false (no debug)
 func TestVerbose(t *testing.T) {
 	s := "Space"
 	buf := bytes.NewBufferString(s)
@@ -105,7 +105,7 @@ func TestVerbose(t *testing.T) {
 	}
 }
 
-//Test Log.Verbose = false (no debug)
+// Test broken writer object
 func TestNilWriter(t *testing.T) {
 	s := "Space"
 	buf := bytes.NewBufferString(s)
