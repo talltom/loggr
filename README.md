@@ -74,5 +74,32 @@ func main(){
 }
 ```
 
+**Example 3. Error handling**
+Errors in loggr are returned to user. Available error types are defined in loggr.go.
+In this example no Writer object is set so the log cannot be written.
+```go
+import (
+  "loggr"
+  "os"
+)
+
+func main(){
+
+  // Logger
+  var log = loggr.Log {
+  		Verbose: false,
+  		// Writer: w, -> forgot to set valid writer object!
+  }
+  err = log.Info("Now writing to file")
+  if err != nil {
+    if err == loggr.ErrInvalidWriter {
+      // Forgot to set writer
+    } else {
+      // Some other error occured
+    }
+  }
+}
+```
+
 ### License
 - GNU GPLv3
