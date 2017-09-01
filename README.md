@@ -7,6 +7,10 @@ A minimalist logger that writes sensible messages
 
 [![Coverage Status](https://coveralls.io/repos/github/talltom/loggr/badge.svg?branch=master)](https://coveralls.io/github/talltom/loggr?branch=master)
 
+Latest release: [v0.0.1](https://github.com/talltom/loggr/releases/tag/v0.0.1)
+
+Go documentation at [godoc.org](https://godoc.org/github.com/talltom/loggr/loggr)
+
 ### Key features
 - messages tagged by type (info, error, debug)
 - optional verbose mode to toggle debug statements
@@ -14,7 +18,7 @@ A minimalist logger that writes sensible messages
 - extensible, accepts io.Writer object for output
 
 ### Design
-Created so that Go programs could follow the existing logging structure (standardised timestamps) used in other related projects, and enable toggling of debug statements at run time to quickly adjust verbosity of output logs. Inspired somewhat by https://12factor.net/logs.
+Created so that Go programs could follow the existing log structure of [urbanriskmap](https://github.com/urbanriskmap) projects, and enable toggling of debug statements at run time to quickly adjust verbosity of output logs. Inspired somewhat by [12factor.net/logs](https://12factor.net/logs).
 
 ### Install
 ```go
