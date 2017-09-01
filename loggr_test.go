@@ -87,7 +87,7 @@ func TestVerbose(t *testing.T) {
 
 	log := Log{
 		Verbose: false,
-		Writer: buf,
+		Writer:  buf,
 	}
 
 	input := "Sun"

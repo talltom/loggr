@@ -2,7 +2,7 @@
 package loggr
 
 import (
-  "errors"
+	"errors"
 	"fmt"
 	"io"
 	"time"
@@ -19,13 +19,13 @@ type Log struct {
 
 // Write function
 func (l Log) write(level string, s string) (err error) {
-  // Catch unassigned writer
-  if l.Writer == nil{
-    return ErrInvalidWriter
-  } else {
-    _, err := fmt.Fprintf(l.Writer, "%s - %s: %s\n", time.Now().UTC().Format(time.RFC3339), level, s)
-    return err
-  }
+	// Catch unassigned writer
+	if l.Writer == nil {
+		return ErrInvalidWriter
+	} else {
+		_, err := fmt.Fprintf(l.Writer, "%s - %s: %s\n", time.Now().UTC().Format(time.RFC3339), level, s)
+		return err
+	}
 }
 
 // Handle Log.Info(msg) statements
@@ -46,5 +46,5 @@ func (l Log) Debug(s string) (err error) {
 	if l.Verbose == true {
 		return l.write("debug", s)
 	}
-  return
+	return
 }
