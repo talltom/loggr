@@ -1,11 +1,13 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![Build Status](https://travis-ci.org/talltom/loggr.svg?branch=master)](https://travis-ci.org/talltom/loggr)
+[![Coverage Status](https://coveralls.io/repos/github/talltom/loggr/badge.svg?branch=master)](https://coveralls.io/github/talltom/loggr?branch=master)
+[![Documentation](https://img.shields.io/badge/Documentation-GoDoc-green.svg)](https://godoc.org/github.com/talltom/loggr/loggr)
+
+
 Loggr.go
 ========
 
 A minimalist logger that writes sensible messages
-
-[![Build Status](https://travis-ci.org/talltom/loggr.svg?branch=master)](https://travis-ci.org/talltom/loggr)
-
-[![Coverage Status](https://coveralls.io/repos/github/talltom/loggr/badge.svg?branch=master)](https://coveralls.io/github/talltom/loggr?branch=master)
 
 Latest release: [v0.0.1](https://github.com/talltom/loggr/releases/tag/v0.0.1)
 
