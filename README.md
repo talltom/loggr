@@ -58,6 +58,8 @@ Result
 ```
 
 **Example 2. Logging to File**
+
+Log destinations (e.g. files) are managed by the user.
 ```go
 package main
 
@@ -91,6 +93,7 @@ func main(){
 ```
 
 **Example 3. Error handling**
+
 Errors in loggr are returned to the user. Available error types are defined in loggr.go.
 In this example no Writer object is set so the log cannot be written.
 ```go
