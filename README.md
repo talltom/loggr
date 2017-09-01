@@ -24,16 +24,18 @@ go get github.com/talltom/loggr
 ### Use
 **Example 1. Logging to Stdout**
 ```go
+package main
+
 import (
-  "loggr"
+  "github.com/talltom/loggr/loggr"
   "os"
 )
 
 func main(){
   // create structure with verbose debug printing enabled
   log := loggr.Log {
-    Verbose = true,
-    Writer = os.Stdout,
+    Verbose: true,
+    Writer: os.Stdout,
   }
 
   log.Info("Info statement")
@@ -51,8 +53,11 @@ Result
 
 **Example 2. Logging to File**
 ```go
+package main
+
 import (
-  "loggr"
+  "bufio"
+  "github.com/talltom/loggr/loggr"
   "os"
 )
 
@@ -67,7 +72,6 @@ func main(){
 
   // Writer
 	w:= bufio.NewWriter(f)
-	log.Writer = w
 	defer w.Flush()
 
   // Logger
@@ -84,8 +88,10 @@ func main(){
 Errors in loggr are returned to the user. Available error types are defined in loggr.go.
 In this example no Writer object is set so the log cannot be written.
 ```go
+package main
+
 import (
-  "loggr"
+  "github.com/talltom/loggr/loggr"
 )
 
 func main(){
@@ -95,7 +101,7 @@ func main(){
   		Verbose: false,
   		// Writer: w, -> forgot to set valid writer object!
   }
-  err = log.Info("Now writing to file")
+  err := log.Info("Now writing to file")
   if err != nil {
     if err == loggr.ErrInvalidWriter {
       // Forgot to set writer
