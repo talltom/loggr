@@ -8,12 +8,18 @@ A minimalist logger that writes sensible messages
 [![Coverage Status](https://coveralls.io/repos/github/talltom/loggr/badge.svg?branch=master)](https://coveralls.io/github/talltom/loggr?branch=master)
 
 ### Key features
-- optional verbose mode to print debug statements
-- timestamps in UTC printed as ISO 8601 string
+- messages tagged by type (info, error, debug)
+- optional verbose mode to toggle debug statements
+- timestamps fixed to UTC and printed as ISO 8601 string
 - extensible, accepts io.Writer object for output
 
+### Design
+Created so that Go programs could follow the existing logging structure (standardised timestamps) used in other related projects, and enable toggling of debug statements at run time to quickly adjust verbosity of output logs. Inspired somewhat by https://12factor.net/logs.
+
 ### Install
-- go get github.com/talltom/loggr
+```go
+go get github.com/talltom/loggr
+```
 
 ### Use
 **Example 1. Logging to Stdout**
@@ -75,12 +81,11 @@ func main(){
 ```
 
 **Example 3. Error handling**
-Errors in loggr are returned to user. Available error types are defined in loggr.go.
+Errors in loggr are returned to the user. Available error types are defined in loggr.go.
 In this example no Writer object is set so the log cannot be written.
 ```go
 import (
   "loggr"
-  "os"
 )
 
 func main(){
@@ -95,11 +100,11 @@ func main(){
     if err == loggr.ErrInvalidWriter {
       // Forgot to set writer
     } else {
-      // Some other error occured
+      // Some other error occurred
     }
   }
 }
 ```
 
 ### License
-- GNU GPLv3
+GNU GPLv3, see LICENSE.txt
