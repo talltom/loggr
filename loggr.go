@@ -8,13 +8,13 @@ import (
 	"time"
 )
 
-// Define an error
+// Define an error with the Writer object
 var ErrInvalidWriter = errors.New("loggr: invalid writer")
 
-// Logger construct with logging level
+// Logger construct
 type Log struct {
-	Verbose bool      // Optionally print debug values
-	Writer  io.Writer // Log destination
+	Verbose bool      // Toggle debug messages on/off
+	Writer  io.Writer // Output
 }
 
 // Write function
@@ -28,19 +28,19 @@ func (l Log) write(level string, s string) (err error) {
 	}
 }
 
-// Handle Log.Info(msg) statements
+// Write info message to log
 func (l Log) Info(s string) (err error) {
 	// Always write info strings
 	return l.write("info", s)
 }
 
-// Handle Log.Error(msg) statements
+// Write error message to log
 func (l Log) Error(s string) (err error) {
 	// Always write error strings
 	return l.write("error", s)
 }
 
-// Handle Log.Debug(msg) statements
+// Write debug message to log
 func (l Log) Debug(s string) (err error) {
 	// Only write if debug is true
 	if l.Verbose == true {
